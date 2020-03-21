@@ -2,7 +2,9 @@
 
 namespace App\Console;
 
+use MessageInfo\NumberAPIDataProvider;
 use MessageInfo\NumberCreationRequestAPIDataProvider;
+use MessageInfo\NumberListAPIDataProvider;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -34,12 +36,18 @@ class TestMessage extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $testDataProvider = new NumberCreationRequestAPIDataProvider();
-        $testDataProvider->setNumber(time() . rand(1,100));
-        $testDataProvider->setDoctorId(1);
-        $testDataProvider->setCreationDate((new \DateTime())->format('Y-m-d H:i:s'));
+        $numberListDto = new NumberListAPIDataProvider();
 
-        $this->messageBus->dispatch($testDataProvider);
+        for ($i=0; $i < 10; $i++){
+            $numberDto = new NumberAPIDataProvider();
+            $numberDto->setNumber(time() . random_int(1,100));
+            $numberDto->setDoctorId(random_int(1,100));
+            $numberDto->setCreationDate((new \DateTime())->format('Y-m-d H:i:s'));
+            $numberDto->setStatus((bool)random_int(0,1));
+            $numberListDto->addaddNumber($numberDto);
+        }
+        
+        $this->messageBus->dispatch($numberListDto);
 
         return 0;
     }

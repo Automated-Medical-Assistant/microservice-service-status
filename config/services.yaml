@@ -24,7 +24,7 @@ services:
         tags: [console.command]
     ###< Xervice\DataProvider ###
 
-    App\MessageHandler\MyMessageHandler:
+    App\MessageHandler\NumberListMessageHandler:
         tags: [messenger.message_handler]
 
     App\Redis\RedisBusinessFactory:
