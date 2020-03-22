@@ -6,5 +6,5 @@ use MessageInfo\NumberListAPIDataProvider;
 
 interface NumberListWriteRepositoryInterface
 {
-    public function insertCollection(NumberListAPIDataProvider $numberList);
+    public function insertCollection(NumberListAPIDataProvider $numberList): void ;
 }

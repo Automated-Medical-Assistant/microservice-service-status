@@ -22,9 +22,9 @@ class NumberListWriteRepository extends ServiceEntityRepository implements Numbe
         $this->entityManager = $this->getEntityManager();
     }
 
-    public function insertCollection(NumberListAPIDataProvider $numberList)
+    public function insertCollection(NumberListAPIDataProvider $numberList): void
     {
-        foreach ($numberList->getSetNumbers() as $number){
+        foreach ($numberList->getNumbers() as $number){
                 $numberEntity = new NumberList();
                 $numberEntity->setDoctorId($number->getDoctorId());
                 $numberEntity->setNumber($number->getNumber());

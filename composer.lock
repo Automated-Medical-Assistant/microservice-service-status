@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "automated-medical-assistant/microservice-message-info",
-            "version": "0.3",
+            "version": "0.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Automated-Medical-Assistant/microservice-message-info.git",
-                "reference": "d0ab8bd6d05601b869251662009ace985bec3e72"
+                "url": "https://github.com/Automated-Medical-Assistant/packagist-message-info.git",
+                "reference": "fd2dc8adde96c6dc52db226403895f1e2e15ce65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automated-Medical-Assistant/microservice-message-info/zipball/d0ab8bd6d05601b869251662009ace985bec3e72",
-                "reference": "d0ab8bd6d05601b869251662009ace985bec3e72",
+                "url": "https://api.github.com/repos/Automated-Medical-Assistant/packagist-message-info/zipball/fd2dc8adde96c6dc52db226403895f1e2e15ce65",
+                "reference": "fd2dc8adde96c6dc52db226403895f1e2e15ce65",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-03-21T13:16:32+00:00"
+            "time": "2020-03-21T23:06:14+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -936,16 +936,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "445796af0e873d9bd04f2502d322a7d5009b6846"
+                "reference": "dafe298ce5d0b995ebe1746670704c0a35868a6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/445796af0e873d9bd04f2502d322a7d5009b6846",
-                "reference": "445796af0e873d9bd04f2502d322a7d5009b6846",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/dafe298ce5d0b995ebe1746670704c0a35868a6a",
+                "reference": "dafe298ce5d0b995ebe1746670704c0a35868a6a",
                 "shasum": ""
             },
             "require": {
@@ -1016,7 +1016,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2020-02-15T14:35:56+00:00"
+            "time": "2020-03-19T06:41:02+00:00"
         },
         {
             "name": "doctrine/persistence",

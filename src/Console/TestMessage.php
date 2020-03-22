@@ -3,7 +3,6 @@
 namespace App\Console;
 
 use MessageInfo\NumberAPIDataProvider;
-use MessageInfo\NumberCreationRequestAPIDataProvider;
 use MessageInfo\NumberListAPIDataProvider;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -12,7 +11,6 @@ use Symfony\Component\Messenger\MessageBusInterface;
 
 class TestMessage extends Command
 {
-    // the name of the command (the part after "bin/console")
     protected static $defaultName = 'test:message';
 
     /**
@@ -29,7 +27,7 @@ class TestMessage extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setDescription('Test message');
     }
@@ -44,7 +42,7 @@ class TestMessage extends Command
             $numberDto->setDoctorId(random_int(1,100));
             $numberDto->setCreationDate((new \DateTime())->format('Y-m-d H:i:s'));
             $numberDto->setStatus((bool)random_int(0,1));
-            $numberListDto->addaddNumber($numberDto);
+            $numberListDto->addNumber($numberDto);
         }
         
         $this->messageBus->dispatch($numberListDto);

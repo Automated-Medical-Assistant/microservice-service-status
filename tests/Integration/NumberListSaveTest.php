@@ -31,7 +31,7 @@ class NumberListSaveTest extends KernelTestCase
     protected function setUp()
     {
         parent::setUp();
-        $kernel = self::bootKernel();
+        self::bootKernel();
         $this->numberHandler = new NumberListMessageHandler(
             self::$container->get(NumberListWriteRepositoryInterface::class)
         );
@@ -46,7 +46,7 @@ class NumberListSaveTest extends KernelTestCase
         $con->query('TRUNCATE number_list');
     }
 
-    public function testCollectionInsertCount()
+    public function testCollectionInsertCount(): void
     {
         $numberListDto = $this->generateTestData(10);
         $this->triggerInsert($numberListDto);
@@ -55,7 +55,7 @@ class NumberListSaveTest extends KernelTestCase
         $this->assertCount(10, $result);
     }
 
-    public function testNumberInsertContent()
+    public function testNumberInsertContent(): void
     {
         $numberListDto = $this->generateTestData(1);
         $this->triggerInsert($numberListDto);
@@ -80,7 +80,7 @@ class NumberListSaveTest extends KernelTestCase
             $numberDto->setDoctorId(random_int(1, 100));
             $numberDto->setCreationDate((new \DateTime())->format('Y-m-d H:i:s'));
             $numberDto->setStatus((bool)random_int(0, 1));
-            $numberListDto->addaddNumber($numberDto);
+            $numberListDto->addNumber($numberDto);
         }
 
         return $numberListDto;

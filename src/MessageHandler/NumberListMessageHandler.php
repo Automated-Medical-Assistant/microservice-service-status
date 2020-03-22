@@ -23,7 +23,7 @@ class NumberListMessageHandler
         $this->numberListRepo = $numberListWriteRepository;
     }
 
-    public function __invoke(NumberListAPIDataProvider $message)
+    public function __invoke(NumberListAPIDataProvider $message): void
     {
         try {
             $this->numberListRepo->insertCollection($message);
