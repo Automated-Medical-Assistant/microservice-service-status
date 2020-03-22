@@ -50,8 +50,7 @@ class NumberListSaveTest extends KernelTestCase
     {
         $numberListDto = $this->generateTestData(10);
         $this->triggerInsert($numberListDto);
-        $con = $this->entityManager->getConnection();
-        var_dump($con->query('SELECT * FROM number_list'));
+        
         $result = $this->numberRepository->findAll();
         $this->assertCount(10, $result);
     }
@@ -61,10 +60,10 @@ class NumberListSaveTest extends KernelTestCase
         $numberListDto = $this->generateTestData(1);
         $this->triggerInsert($numberListDto);
 
-        $result = $this->numberRepository->findBy(['number' => 'NUMBER1']);
+        $result = $this->numberRepository->findBy(['number' => 'NUMBER0']);
 
         $this->assertCount(1, $result);
-        $this->assertSame('NUMBER1', $result[0]->getNumber());
+        $this->assertSame('NUMBER0', $result[0]->getNumber());
     }
 
     /**
@@ -77,7 +76,7 @@ class NumberListSaveTest extends KernelTestCase
 
         for ($i = 0; $i < $count; $i++) {
             $numberDto = new NumberAPIDataProvider();
-            $numberDto->setNumber('NUMBER'.$count);
+            $numberDto->setNumber('NUMBER'.$i);
             $numberDto->setDoctorId(random_int(1, 100));
             $numberDto->setCreationDate((new \DateTime())->format('Y-m-d H:i:s'));
             $numberDto->setStatus((bool)random_int(0, 1));
