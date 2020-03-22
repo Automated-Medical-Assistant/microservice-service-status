@@ -26,7 +26,3 @@ services:
 
     App\MessageHandler\NumberListMessageHandler:
         tags: [messenger.message_handler]
-
-    App\Redis\RedisBusinessFactory:
-        arguments:
-            $uri: '%env(REDIS)%'
