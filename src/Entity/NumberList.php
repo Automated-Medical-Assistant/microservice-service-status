@@ -10,12 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 class NumberList
 {
     /**
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $doctorId;
@@ -36,15 +30,6 @@ class NumberList
      */
     private $status;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getDoctorId(): ?int
-    {
-        return $this->doctorId;
-    }
 
     public function setDoctorId(int $doctorId): self
     {

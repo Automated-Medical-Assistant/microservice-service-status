@@ -60,9 +60,10 @@ class NumberListSaveTest extends KernelTestCase
         $numberListDto = $this->generateTestData(1);
         $this->triggerInsert($numberListDto);
 
-        $result = $this->numberRepository->find(1);
+        $result = $this->numberRepository->findBy(['number' => 'NUMBER1']);
 
-        $this->assertSame('NUMBER1', $result->getNumber());
+        $this->assertCount(1, $result);
+        $this->assertSame('NUMBER1', $result[0]->getNumber());
     }
 
     /**

@@ -40,7 +40,7 @@ class TestMessage extends Command
 
         for ($i=0; $i < 10; $i++){
             $numberDto = new NumberAPIDataProvider();
-            $numberDto->setNumber(time() . random_int(1,100));
+            $numberDto->setNumber(time() . $i);
             $numberDto->setDoctorId(random_int(1,100));
             $numberDto->setCreationDate((new \DateTime())->format('Y-m-d H:i:s'));
             $numberDto->setStatus((bool)random_int(0,1));
