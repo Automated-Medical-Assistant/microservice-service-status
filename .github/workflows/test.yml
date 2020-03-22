@@ -7,7 +7,7 @@ jobs:
             -   name: Checkout
                 uses: actions/checkout@v2
             -   name: cp .env
-                uses: cp .env.local.dist .env.local
+                run: cp .env.local.dist .env.local
             -   name: Build the docker-compose stack
                 run: docker-compose up -d
             -   name: Setup PHP
