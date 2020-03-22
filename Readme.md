@@ -1,6 +1,11 @@
 # Status Microservice
 
-### init
+![](https://github.com/Automated-Medical-Assistant/microservice-service-status/workflows/test/badge.svg)
+
+
+# Purpose
+This Microservice is one piece of multiple services for an COVID-19 test result application.
+This project was made @ [#WirVsViren](https://wirvsvirushackathon.org/) Hackathon.
 
 ###### Technical Requirements
 
@@ -9,7 +14,6 @@
 
 
 ##### RabbitMQ
-
 Login: admin  
 Pass: admin
 
@@ -18,6 +22,8 @@ Pass: admin
 docker-compose pull
 docker-compose up -d
 composer install
+bin/console doctrine:database:create 
+bin/console doctrine:migrations:migrate
 symfony serve
 ```
 
