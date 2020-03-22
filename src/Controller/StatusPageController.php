@@ -21,13 +21,20 @@ class StatusPageController extends AbstractController
 
     /**
      * @Route("/status/{number}", name="status_page")
+     * @param string $number
+     *
+     * @return JsonResponse
      */
     public function index(string $number): jsonResponse
     {
+        $message = 'Number not found';
         $result = $this->numberListRepository->findOneBy(['number' => $number]);
+        if($result !== null){
+            $message = $result->getStatus() ? 'infected' : 'not infected';
+        }
         
         return $this->json([
-            'message' => $result->getStatus() ? 'infected' : 'not infected',
+            'message' => $message,
         ]);
     }
 }
