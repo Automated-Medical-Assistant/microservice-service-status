@@ -50,7 +50,8 @@ class NumberListSaveTest extends KernelTestCase
     {
         $numberListDto = $this->generateTestData(10);
         $this->triggerInsert($numberListDto);
-
+        $con = $this->entityManager->getConnection();
+        var_dump($con->query('SELECT * FROM number_list'));
         $result = $this->numberRepository->findAll();
         $this->assertCount(10, $result);
     }
