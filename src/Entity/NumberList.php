@@ -10,7 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 class NumberList
 {
     /**
-     * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
@@ -22,6 +21,7 @@ class NumberList
     private $doctorId;
 
     /**
+     * @ORM\Id()
      * @ORM\Column(type="string", length=255)
      */
     private $number;

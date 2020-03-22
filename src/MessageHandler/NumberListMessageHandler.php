@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\MessageHandler;
 
-use App\Redis\RedisServiceInterface;
 use App\Repository\NumberListWriteRepositoryInterface;
-use MessageInfo\NumberCreationRequestAPIDataProvider;
 use MessageInfo\NumberListAPIDataProvider;
 
 class NumberListMessageHandler
